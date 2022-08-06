@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "1c8a47ee-45b2-4e45-a812-8d5642e9d9cb",
+		"name": "Spring Boot Batch 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9792683"
+	},
+	"item": [
+		{
+			"name": "Get Employee",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9090/employee/details/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"employee",
+						"details",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Employees",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9090/employee/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"employee",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Employees API Gateway",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/employee-api/employee/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employee-api",
+						"employee",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee By name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9090/employee/byName?lastName=Sharma",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"employee",
+						"byName"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Rashmi",
+							"disabled": true
+						},
+						{
+							"key": "lastName",
+							"value": "Sharma"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Path Variable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/demo/hii/10/200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"hii",
+						"10",
+						"200"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/demo/hello?lastName= Thakur&firstName=Harsh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"hello"
+					],
+					"query": [
+						{
+							"key": "lastName",
+							"value": " Thakur"
+						},
+						{
+							"key": "firstName",
+							"value": "Harsh"
+						},
+						{
+							"key": "city",
+							"value": "Bhopal",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"firstName\":\"Amit\",\r\n   \"lastName\":\"Sharma\",\r\n   \"address\":\"Sadar bajar\",\r\n   \"city\":\"Jabalpur\",\r\n   \"state\":\"Madhya Pradesh\",\r\n   \"mobileNumber\":\"9425145879\",\r\n   \"emailId\":\"amit.sharma@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/employee/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"employee",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee-API Gateway",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"firstName\":\"Jitendra\",\r\n   \"lastName\":\"Sharma\",\r\n   \"address\":\"Sarafa bajar\",\r\n   \"city\":\"Sagar\",\r\n   \"state\":\"Madhya Pradesh\",\r\n   \"mobileNumber\":\"9874585632\",\r\n   \"emailId\":\"jitendra.sharma@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/employee-api/employee/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employee-api",
+						"employee",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee Xml Input",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<firstName>Gaurav</firstName>\r\n<lastName>Sharma</lastName>\r\n<address>Sarafa Bajar</address>\r\n<city>Indore</city>\r\n<state>Madhya Pradesh</state>\r\n<mobileNumber>9587458962</mobileNumber>\r\n<emailId>gaurav.sharma@gmail.com</emailId>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"save"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
